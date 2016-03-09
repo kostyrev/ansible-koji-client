@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Aleksandr Kostyrev
-  description: Installs Koji's koji (client) for RedHat
+  description: Installs Koji (client) for RedHat
   license: license (GPLv3)
   min_ansible_version: 1.9.1
   platforms:
