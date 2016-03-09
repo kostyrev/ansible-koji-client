@@ -1,0 +1,10 @@
+---
+# defaults file for kostyrevaa.koji-client
+# defaults for /etc/koji.conf
+koji_client_server: http://{{ hostvars[groups['koji_hub'][0]]['inventory_hostname'] }}/kojihub
+koji_client_topurl: http://{{ hostvars[groups['koji_hub'][0]]['inventory_hostname'] }}/kojifiles
+koji_client_cert: ~/.koji/client.crt
+koji_client_ca: ~/.koji/clientca.crt
+koji_client_serverca: ~/.koji/serverca.crt
+koji_client_KojiWebURL: http://{{ hostvars[groups['koji_web'][0]]['inventory_hostname'] }}/koji
+koji_client_KojiDir: /mnt/koji

@@ -1,0 +1,12 @@
+---
+# tasks file for kostyrevaa.koji-client
+
+- name: install koji package
+  action: "{{ ansible_pkg_mgr }} pkg=koji state=present"
+  tags:
+    - koji-client
+
+- name: Configure /etc/koji.conf
+  template: src=koji.conf.j2 dest=/etc/koji.conf owner=root group=root mode=0644
+  tags:
+    - koji-client
