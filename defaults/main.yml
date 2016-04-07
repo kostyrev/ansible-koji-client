@@ -1,6 +1,10 @@
 ---
 # defaults file for kostyrevaa.koji-client
 # defaults for /etc/koji.conf
+koji_client_config: /etc/koji.conf
+koji_client_config_owner: root
+koji_client_config_group: root
+koji_client_config_mode: 0644
 koji_client_ssl: true
 koji_client_url_prefix: "{{ 'https://' if koji_client_ssl == true else 'http://' }}"
 koji_client_server: http://{{ hostvars[groups['koji_hub'][0]]['inventory_hostname'] }}/kojihub

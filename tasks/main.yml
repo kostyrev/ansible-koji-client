@@ -7,6 +7,11 @@
     - koji-client
 
 - name: Configure /etc/koji.conf
-  template: src=koji.conf.j2 dest=/etc/koji.conf owner=root group=root mode=0644
+  template:
+    src: koji.conf.j2
+    dest: "{{ koji_client_config }}"
+    owner: "{{ koji_client_config_owner }}"
+    group: "{{ koji_client_config_group }}"
+    mode: "{{ koji_client_config_mode }}"
   tags:
     - koji-client
