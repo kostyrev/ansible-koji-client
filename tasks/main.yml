@@ -15,3 +15,4 @@
     mode: "{{ koji_client_config_mode }}"
   tags:
     - koji-client
+    - koji-config
