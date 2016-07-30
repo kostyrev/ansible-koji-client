@@ -1,6 +1,15 @@
 ---
 # tasks file for kostyrevaa.koji-client
 
+- name: Main | Remove nodocs from yum.conf
+  lineinfile:
+    dest: /etc/yum.conf
+    state: absent
+    regexp: "^tsflags="
+  tags:
+    - yum-nodocs
+    - koji-package
+
 - name: install {{ koji_package }}
   package:
     name: "{{ koji_package }}"
