@@ -1,38 +1,50 @@
-Role Name
+koji-client
 =========
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/kostyrevaa/ansible-koji-client.svg?branch=master)](https://travis-ci.org/kostyrevaa/ansible-koji-client)
+
+Installs Koji (client) for RedHat and optionally configures it.
+
+This is one of the koji- roles which configures the whole koji stack.
+
+Roles are:
+
+ * [koji-ca](https://galaxy.ansible.com/kostyrevaa/koji-ca)
+ * [koji-db](https://galaxy.ansible.com/kostyrevaa/koji-db)
+ * [koji-client](https://galaxy.ansible.com/kostyrevaa/koji-client)
+ * [koji-hub](https://galaxy.ansible.com/kostyrevaa/koji-hub)
+ * [koji-web](https://galaxy.ansible.com/kostyrevaa/koji-web)
+ * [koji-kojira](https://galaxy.ansible.com/kostyrevaa/koji-kojira)
+ * [koji-builder](https://galaxy.ansible.com/kostyrevaa/koji-builder)
+
+For example of all-in-one setup go to [ansible-koji-infra](https://github.com/kostyrevaa/ansible-koji-infra)
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Installing koji on RedHat-like systems requires EPEL.
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - hosts: all
+	  vars:
+        koji_client_package_only: true
       roles:
-         - { role: username.rolename, x: 42 }
+          - role: kostyrevaa.koji-client
+
+  
 
 License
 -------
 
-BSD
+MIT / BSD
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Send your suggestions and pull requests to https://github.com/kostyrevaa/ansible-koji-client.  
+When send PR make sure your changes are backward-compatible.  
+You may test your changes to role with https://github.com/kostyrevaa/ansible-koji-infra

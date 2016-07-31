@@ -1,0 +1,28 @@
+---
+ansible:
+  playbook: playbook.yml
+  requirements_file: requirements.yml
+
+molecule:
+  test:
+    sequence:
+      - destroy
+      - create
+      - converge
+      - destroy
+
+docker:
+  containers:
+
+    - name: koji-client-centos6
+      ansible_groups:
+        - koji_client
+      image: centos
+      image_version: 6
+
+    - name: koji-client-centos7
+      ansible_groups:
+        - koji_client
+      image: centos
+      image_version: 7
+

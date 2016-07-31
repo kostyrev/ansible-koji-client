@@ -1,0 +1,4 @@
+- name: goozbach.EPEL
+  scm: git
+  src: https://github.com/goozbach-ansible/role-epel
+  version: master
