@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - kostyrevaa.koji-client
+    - ansible-koji-client
