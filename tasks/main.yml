@@ -18,7 +18,12 @@
     - koji-client
 
 - name: Configure /etc/koji.conf
-  template: src=koji.conf.j2 dest=/etc/koji.conf owner=root group=root mode=0644
+  template:
+    src: koji.conf.j2
+    dest: /etc/koji.conf
+    owner: root
+    group: root
+    mode: '0644'
   when: not koji_client_package_only
   tags:
     - koji-client
